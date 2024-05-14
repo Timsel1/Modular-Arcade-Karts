@@ -1,0 +1,19 @@
+{
+    "name": "Meijvogel.ModularArcadeKarts",
+    "rootNamespace": "Meijvogel.ModularArcadeKarts",
+    "references": [
+        "GUID:2ce17c625175dde488cc42fe33ca7a8d",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:1c3a1853c155706459cee188f51a42bc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
