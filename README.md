@@ -128,52 +128,85 @@ The power of the kart's steering. Is used instead of sharp steer power and wide 
 |:-:|:-:|
 |||
 
-        [Header("Drift Settings")]
-        [Tooltip("The force applied to the kart when drifting.")]
-        public float _outwardsDriftForce = 50000;
+#### Outwards Drift Force
+The outward force applied to the kart when drifting.
 
-        [Tooltip("The speed threshold required for the kart to start drifting.")]
-        [Range(0.01f, 100)]
-        public float _driftSpeedThreshold = 30f;
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("The power of the kart's drift, affects the sharpess of the inward and outward drift.")]
-        [Range(0.01f, 200)]
-        public float _driftPower = 70;
+#### Drift Speed Threshold
+The minimum speed required for the kart to start a drift.
 
-        [Tooltip("A value used to calculate the sharpness of a drift when steering inward during a drift.")]
-        [Range(0.01f, 10)]
-        public float _inwardDriftAngle = 1.5f;
+#### Drift Power
+The power of the kart's drift, affects the sharpess of the inward and outward drift.
 
-        [Tooltip("A value used to calculate the sharpness of a drift when steering  outward during a drift.")]
-        [Range(0.01f, 10)]
-        public float _outwardDriftAngle = 0.2f;
+|||
+|:-:|:-:|
+|||
+        
+#### Inward Drift Angle
+A value used to calculate the sharpness of a drift when steering inward during a drift.
 
-        [Tooltip("Determines if the kart model rotates during a drift.")]
-        public bool turnModel = true;
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("The speed at which the kart model rotates during a drift (purly visual).")]
-        public float _turnSpeed = 8;
+#### Outward Drift Angle
+A value used to calculate the sharpness of a drift when steering  outward during a drift.
 
-        [Tooltip("The visual angle of the kart model during a drift (purly visual).")]
-        [Range(0.01f, 360)]
-        public float visualDriftAngle = 20;
+|||
+|:-:|:-:|
+|||
+     
+#### Turn Model
+Determines if the kart model rotates during a drift.
+      
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("The thresholds for triggering different phases of drift boosting.")]
-        public float[] _driftTimeThresholds = { 1.5f, 4f, 7f };
+#### Turn Speed
+The speed at which the kart model rotates during a drift (purly visual).
 
-        [Tooltip("The durations of boost phases triggered by drifting.")]
-        public float[] _boostPhaseDurations = { 0.75f, 1.5f, 2.5f };
+|||
+|:-:|:-:|
+|||
 
-        [Header("Gravity Settings")]
-        [Tooltip("The speed the kart will fall down with when it is not grounded.")]
-        public float _gravity = 50;
+#### Visual Drift Angle
+The visual angle of the kart model during a drift (purly visual).
 
-        [Header("Raycast Settings")]
-        public LayerMask _layerMask;
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("Sets the length of the raycast used to check if the kart is grounded, increase size until grounded is true.")]
-        public float _raycastDistance = 1f;
+#### Drift Time Thresholds
+The thresholds for triggering different phases of drift boosting.
 
+|||
+|:-:|:-:|
+|||
+
+#### Boost Phase Durations
+The durations of boost phases triggered by drifting.
+
+|||
+|:-:|:-:|
+|||
+      
+#### Gravity
+The speed the kart will fall down with when it is not grounded.
+
+|||
+|:-:|:-:|
+|||
+
+#### Layer Mask
+The layer masks the raycast will check to see if the kart is grounded.
+
+#### Raycast Distance
+Sets the length of the raycast used to check if the kart is grounded, increase size until grounded is true.
+      
 
 
 
