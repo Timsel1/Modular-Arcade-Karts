@@ -179,7 +179,7 @@ The speed the kart will fall down with when it is not grounded.
 
 |10 Gravity|50 Gravity|
 |:--------:|:--------:|
-|![Gravity10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/daac90d4-99d4-4e37-acb3-86703f548666)|![Gravity50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/f9b42719-28fc-4bff-a5e1-a4b534caa67b)|
+|![Gravity10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/a0fe3d44-9ee0-471d-859c-c580388ea387)|![Gravity50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/9d4862ec-2436-45af-af63-98d0500366aa)|
 
 #### Layer Mask
 The layer masks the raycast will check to see if the kart is grounded.
