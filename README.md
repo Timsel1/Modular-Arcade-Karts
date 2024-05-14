@@ -75,65 +75,53 @@ The maximum backward speed of the kart. Cannot be exceeded.
 #### Boost Speed
 The speed of the kart when boosting. A Higher speed cannot be reached.
 
-|||
-|:-:|:-:|
-|||
+|No boost speed|140 boost speed|400 boost speed|
+|:------------:|:-------------:|:-------------:|
+|![Boost0](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/48cceb5a-eff1-47c7-8b55-1a7b12d50dae)|![Boost140](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/7eae10a1-c89e-4361-8865-224addbc4077)|![Boost400](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/c0ecc96c-5f19-41fa-8b13-ee9ad57d44e1)|
 
 #### Acceleration Time
 The time it takes for the kart to reach maximum speed in seconds when accelerating.
 
-|||
-|:-:|:-:|
-|||
+|0.01 Acceleration Time|4 Acceleration Time|
+|:--------------------:|:-----------------:|
+|![0AccelDecel](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/5d8d6bca-ec1c-4ad4-ab5b-45e2fa08c31c)|![4Accel](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/59def50f-ad20-44c7-8ff0-43e8df2a9578)|
 
 #### Deceleration Time
 The time it takes for the kart to come to a full stop when decelerating in seconds.
 
-|||
-|:-:|:-:|
-|||
+|0.01 Deceleration Time|3 Deceleration Time|
+|:--------------------:|:-----------------:|
+|![0AccelDecel](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/3e761ddd-936f-444c-85ff-a7651cce37f7)|![3Decel](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/a95270c7-3c05-4814-8c25-f271b33f6f50)|
 
 #### Speed Based Steering
-Determines if steering sharpness is affected by the kart's speed. If true 2 values can be set to determine the widest and sharpest steering angle.
+Determines if steering sharpness is affected by the kart's speed. If true 2 values can be set to determine the widest and sharpest steering angle. If turned off a set value will be used which will not be altered based on the kart's current speed.
         
-|||
-|:-:|:-:|
-|||
+|Below Threshold|Above Threshold|
+|:-------------:|:-------------:|
+|![BelowThreshold](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/85d1ba2e-1974-40bc-b8e1-be0e5f9030be)|![AboveThreshold](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/46a57068-3efd-4751-a1a2-efbddd761314)|
 
 #### Steer Speed Threshold
 The speed threshold at which the speed based steering starts to take effect.
 
-|||
-|:-:|:-:|
-|||
-
 #### Sharp Steer Power
 The sharpest the kart can turn, is used at speeds below the steer speed threshold. (Should be higher than _wideSteerPower)
-
-|||
-|:-:|:-:|
-|||
 
 #### Wide Steer Power
 The widest the kart will turn, is used at speeds above the steer speed threshold. Value will transition smoothly from sharp steer power to wide steer power thanks to DOTween (Should be lower than _sharpSteerPower)
 
-|||
-|:-:|:-:|
-|||
-
 #### Steer Power      
-The power of the kart's steering. Is used instead of sharp steer power and wide steer power and can only be used if speed based steering is false. 
+The power of the kart's steering, a set value that will not be altered. Is used instead of sharp steer power and wide steer power and can only be used if speed based steering is false. 
 
-|||
+|50 Steer Power|70 Steer Power|
 |:-:|:-:|
-|||
+|![SteerPower 50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/1deb2a59-3417-4cf2-be70-9147096a5412)|![SteerPower 70](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/c5d1cbf4-1646-4c0a-adbd-dd917a978836)|
 
 #### Outwards Drift Force
 The outward force applied to the kart when drifting.
 
-|||
-|:-:|:-:|
-|||
+|50 Outwards Drift Force|100 Outwards Drift Force|
+|:---------------------:|:----------------------:|
+|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cca95fe2-6548-41b0-b01c-bb7a92e73cbf)|![Outward100](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/382a8b08-310b-40f8-9dcd-3a01fee3ed03)|
 
 #### Drift Speed Threshold
 The minimum speed required for the kart to start a drift.
@@ -141,65 +129,57 @@ The minimum speed required for the kart to start a drift.
 #### Drift Power
 The power of the kart's drift, affects the sharpess of the inward and outward drift.
 
-|||
-|:-:|:-:|
-|||
+|70 Drift Power|200 Drift Power|
+|:------------:|:-------------:|
+|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/ebe50c05-bd28-40de-8359-e78ed7cdda74)|![DriftPower200](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cfa6645c-8833-4c15-89f9-eeca45368eb0)|
         
 #### Inward Drift Angle
 A value used to calculate the sharpness of a drift when steering inward during a drift.
 
-|||
+|1.5 Inward Drift Angle|4 Inward Drift Angle|
 |:-:|:-:|
-|||
+|![Inward1 5](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/703a4b03-0acb-4183-bf4d-1c9a02d20297)|![Inward4](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/271e3b29-5379-4073-a30e-f373018702ff)|
 
 #### Outward Drift Angle
 A value used to calculate the sharpness of a drift when steering  outward during a drift.
 
-|||
-|:-:|:-:|
-|||
+|0.2 Outward Drift Factor|1 Outward Drift Factor|
+|:---------------------:|:-------------------:|
+|![Outward0 2](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/eef2677b-50e7-49ca-89b4-680306c752a6)|![Outward1](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/1873046c-510d-4b94-8ffd-9b26af1435b3)|
      
 #### Turn Model
 Determines if the kart model rotates during a drift.
       
-|||
-|:-:|:-:|
-|||
+|Turn Model true|Turn Model false|
+|:-------------:|:--------------:|
+|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8db4de10-10be-445a-bbe2-dbbdb28c3082)|![TurnModelFalse](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/18298c32-1cdf-4c89-ac80-ea6d526fd688)|
 
 #### Turn Speed
 The speed at which the kart model rotates during a drift (purly visual).
 
-|||
-|:-:|:-:|
-|||
+|8 Turn Speed| Turn Speed|
+|:---------:|:---------:|
+|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8db4de10-10be-445a-bbe2-dbbdb28c3082)|![Turn1000](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/1f6d2455-aee2-4bd4-8d8f-66780d33ee4b)|
 
 #### Visual Drift Angle
 The visual angle of the kart model during a drift (purly visual).
 
-|||
-|:-:|:-:|
-|||
+|40 Visual Drift Angle|80 Visual Drift Angle|
+|:-------------------:|:-------------------:|
+|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8db4de10-10be-445a-bbe2-dbbdb28c3082)|![Turn80C](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/fd9aa8e4-2552-480f-81fb-0d7ae455f441)|
 
 #### Drift Time Thresholds
 The thresholds for triggering different phases of drift boosting.
 
-|||
-|:-:|:-:|
-|||
-
 #### Boost Phase Durations
 The durations of boost phases triggered by drifting.
-
-|||
-|:-:|:-:|
-|||
       
 #### Gravity
 The speed the kart will fall down with when it is not grounded.
 
-|||
-|:-:|:-:|
-|||
+|10 Gravity|50 Gravity|
+|:--------:|:--------:|
+|![Gravity10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/daac90d4-99d4-4e37-acb3-86703f548666)|![Gravity50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/f9b42719-28fc-4bff-a5e1-a4b534caa67b)|
 
 #### Layer Mask
 The layer masks the raycast will check to see if the kart is grounded.
