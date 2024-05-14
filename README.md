@@ -58,51 +58,75 @@ It is recommended to have this structure for your kart:
 It is possible to just have the kart's model with all components on it, if you dicide to do this, make sure to set the _turnModel bool to false in your scriptable object.
 
 ### Kart Statistics
-- Max Speed:
+#### Max Speed:
 The maximum forward speed of the kart. This speed can only be exceeded when the kart gets a boost.
 
 |Max Speed 10 and instant acceleration|Max Speed 100 and instant acceleration|
 |:-----------------------------------:|:------------------------------------:|
 |![Speed10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/2f6cd706-7ba1-4aca-bad9-25a3eccca5a7)|![Speed100](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/3887c2a5-87cf-4047-8244-536f1ef767ad)|
 
-- Backward Max Speed:  
+#### Backward Max Speed:  
 The maximum backward speed of the kart. Cannot be exceeded.
 
 |Backward Max Speed 10 and instant acceleration|Backward Max Speed 100 and instant acceleration|
 |:-----------------------------------:|:------------------------------------:|
 |![BackSpeed10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/fd5454f7-a49b-4655-b284-8e55e391e551)|![BackSpeed100](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/d778b511-22c4-4620-ab06-fe2f4fb1411c)|
+
+#### Boost Speed
+The speed of the kart when boosting. A Higher speed cannot be reached.
+
+|||
+|:-:|:-:|
+|||
+
+#### Acceleration Time
+The time it takes for the kart to reach maximum speed in seconds when accelerating.
+
+|||
+|:-:|:-:|
+|||
+
+#### Deceleration Time
+The time it takes for the kart to come to a full stop when decelerating in seconds.
+
+|||
+|:-:|:-:|
+|||
+
+#### Speed Based Steering
+Determines if steering sharpness is affected by the kart's speed. If true 2 values can be set to determine the widest and sharpest steering angle.
         
-        
-        [Tooltip("The speed of the kart when boosting.")]
-        [Range(1, 400)]
-        public float _boostSpeed = 100;
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("The time it takes for the kart to reach maximum speed in seconds when accelerating.")]
-        [Range(0.01f, 10)]
-        public float _accelerationTime = 4;
+#### Steer Speed Threshold
+The speed threshold at which the speed based steering starts to take effect.
 
-        [Tooltip("The time it takes for the kart to come to a stop when decelerating in seconds.")]
-        [Range(0.01f, 10)]
-        public float _decelerationTime = 3;
+|||
+|:-:|:-:|
+|||
 
-        [Header("Steering Settings")]
-        [Tooltip("Determines if steering sharpness is affected by the kart's speed.")]
-        public bool _speedBasedSteering = true;
+#### Sharp Steer Power
+The sharpest the kart can turn, is used at speeds below the steer speed threshold. (Should be higher than _wideSteerPower)
 
-        [Tooltip("The speed threshold at which the kart starts to steer less sharp.")]
-        public float _steerSpeedThreshold = 30f;
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("The sharpest the kart can turn, is used at the lowest speeds. (Should be higher than _wideSteerPower)")]
-        [Range(0.01f, 200)]
-        public float _sharpSteerPower = 100f;
+#### Wide Steer Power
+The widest the kart will turn, is used at speeds above the steer speed threshold. Value will transition smoothly from sharp steer power to wide steer power thanks to DOTween (Should be lower than _sharpSteerPower)
 
-        [Tooltip("The widest the kart will turn, is used at the highest speeds. (Should be lower than _sharpSteerPower)")]
-        [Range(0.01f, 200)]
-        public float _wideSteerPower = 70f;
+|||
+|:-:|:-:|
+|||
 
-        [Tooltip("The power of the kart's steering.")]
-        [Range(0.01f, 200)]
-        public float _steerPower = 70;
+#### Steer Power      
+The power of the kart's steering. Is used instead of sharp steer power and wide steer power and can only be used if speed based steering is false. 
+
+|||
+|:-:|:-:|
+|||
 
         [Header("Drift Settings")]
         [Tooltip("The force applied to the kart when drifting.")]
