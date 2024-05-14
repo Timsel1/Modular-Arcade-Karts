@@ -121,7 +121,7 @@ The outward force applied to the kart when drifting.
 
 |0 Outwards Drift Force|50 Outwards Drift Force|
 |:---------------------:|:----------------------:|
-|![Outward0](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/5a108772-41b2-4cb0-a012-28881aea5689)|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cca95fe2-6548-41b0-b01c-bb7a92e73cbf)|
+|![Outward0](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/d180550e-dd6f-41fb-9a79-6b9db8cf298c)|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cca95fe2-6548-41b0-b01c-bb7a92e73cbf)|
 
 #### Drift Speed Threshold
 The minimum speed required for the kart to start a drift.
@@ -157,7 +157,7 @@ Determines if the kart model rotates during a drift.
 #### Turn Speed
 The speed at which the kart model rotates during a drift (purly visual).
 
-|8 Turn Speed| Turn Speed|
+|8 Turn Speed|1000 Turn Speed|
 |:---------:|:---------:|
 |![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8db4de10-10be-445a-bbe2-dbbdb28c3082)|![Turn1000](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/1f6d2455-aee2-4bd4-8d8f-66780d33ee4b)|
 
