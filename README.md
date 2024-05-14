@@ -55,9 +55,100 @@ It is recommended to have this structure for your kart:
 |:-:|:-:|
 
 
-It is possible to just have the kart's model with all components on it, if you dicide to do this, make sure to set the _turnModel bool to false.
+It is possible to just have the kart's model with all components on it, if you dicide to do this, make sure to set the _turnModel bool to false in your scriptable object.
 
+### Kart Statistics
+- Max Speed:
+The maximum forward speed of the kart. This speed can only be exceeded when the kart gets a boost.
 
+|Max Speed 10 and instant acceleration|Max Speed 100 and instant acceleration|
+|:-----------------------------------:|:------------------------------------:|
+|![Speed10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/2f6cd706-7ba1-4aca-bad9-25a3eccca5a7)|![Speed100](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/3887c2a5-87cf-4047-8244-536f1ef767ad)|
+
+- Backward Max Speed:  
+The maximum backward speed of the kart. Cannot be exceeded.
+
+|Backward Max Speed 10 and instant acceleration|Backward Max Speed 100 and instant acceleration|
+|:-----------------------------------:|:------------------------------------:|
+|![BackSpeed10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/fd5454f7-a49b-4655-b284-8e55e391e551)|![BackSpeed100](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/d778b511-22c4-4620-ab06-fe2f4fb1411c)|
+        
+        
+        [Tooltip("The speed of the kart when boosting.")]
+        [Range(1, 400)]
+        public float _boostSpeed = 100;
+
+        [Tooltip("The time it takes for the kart to reach maximum speed in seconds when accelerating.")]
+        [Range(0.01f, 10)]
+        public float _accelerationTime = 4;
+
+        [Tooltip("The time it takes for the kart to come to a stop when decelerating in seconds.")]
+        [Range(0.01f, 10)]
+        public float _decelerationTime = 3;
+
+        [Header("Steering Settings")]
+        [Tooltip("Determines if steering sharpness is affected by the kart's speed.")]
+        public bool _speedBasedSteering = true;
+
+        [Tooltip("The speed threshold at which the kart starts to steer less sharp.")]
+        public float _steerSpeedThreshold = 30f;
+
+        [Tooltip("The sharpest the kart can turn, is used at the lowest speeds. (Should be higher than _wideSteerPower)")]
+        [Range(0.01f, 200)]
+        public float _sharpSteerPower = 100f;
+
+        [Tooltip("The widest the kart will turn, is used at the highest speeds. (Should be lower than _sharpSteerPower)")]
+        [Range(0.01f, 200)]
+        public float _wideSteerPower = 70f;
+
+        [Tooltip("The power of the kart's steering.")]
+        [Range(0.01f, 200)]
+        public float _steerPower = 70;
+
+        [Header("Drift Settings")]
+        [Tooltip("The force applied to the kart when drifting.")]
+        public float _outwardsDriftForce = 50000;
+
+        [Tooltip("The speed threshold required for the kart to start drifting.")]
+        [Range(0.01f, 100)]
+        public float _driftSpeedThreshold = 30f;
+
+        [Tooltip("The power of the kart's drift, affects the sharpess of the inward and outward drift.")]
+        [Range(0.01f, 200)]
+        public float _driftPower = 70;
+
+        [Tooltip("A value used to calculate the sharpness of a drift when steering inward during a drift.")]
+        [Range(0.01f, 10)]
+        public float _inwardDriftAngle = 1.5f;
+
+        [Tooltip("A value used to calculate the sharpness of a drift when steering  outward during a drift.")]
+        [Range(0.01f, 10)]
+        public float _outwardDriftAngle = 0.2f;
+
+        [Tooltip("Determines if the kart model rotates during a drift.")]
+        public bool turnModel = true;
+
+        [Tooltip("The speed at which the kart model rotates during a drift (purly visual).")]
+        public float _turnSpeed = 8;
+
+        [Tooltip("The visual angle of the kart model during a drift (purly visual).")]
+        [Range(0.01f, 360)]
+        public float visualDriftAngle = 20;
+
+        [Tooltip("The thresholds for triggering different phases of drift boosting.")]
+        public float[] _driftTimeThresholds = { 1.5f, 4f, 7f };
+
+        [Tooltip("The durations of boost phases triggered by drifting.")]
+        public float[] _boostPhaseDurations = { 0.75f, 1.5f, 2.5f };
+
+        [Header("Gravity Settings")]
+        [Tooltip("The speed the kart will fall down with when it is not grounded.")]
+        public float _gravity = 50;
+
+        [Header("Raycast Settings")]
+        public LayerMask _layerMask;
+
+        [Tooltip("Sets the length of the raycast used to check if the kart is grounded, increase size until grounded is true.")]
+        public float _raycastDistance = 1f;
 
 
 
