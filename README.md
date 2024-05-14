@@ -11,7 +11,7 @@ This Project makes use of the following packages:
 - [DOTween](#dotween)
 - [UniTask](#unitask)
 
-If you don't know how to intergrate these packages into your project, you can find the steps under their headers.
+If you don't know how to intergrate these packages into your project, you can find the steps below.
 
 ### [Unity New Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.8/manual/Installation.html)  
 The steps for intergrating the new input system into your project can be followed by clicking the provided header link. 
