@@ -119,9 +119,9 @@ The power of the kart's steering, a set value that will not be altered. Is used 
 #### Outwards Drift Force
 The outward force applied to the kart when drifting.
 
-|50 Outwards Drift Force|100 Outwards Drift Force|
+|0 Outwards Drift Force|50 Outwards Drift Force|
 |:---------------------:|:----------------------:|
-|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cca95fe2-6548-41b0-b01c-bb7a92e73cbf)|![Outward100](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/382a8b08-310b-40f8-9dcd-3a01fee3ed03)|
+|![Outward0](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/5a108772-41b2-4cb0-a012-28881aea5689)|![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cca95fe2-6548-41b0-b01c-bb7a92e73cbf)|
 
 #### Drift Speed Threshold
 The minimum speed required for the kart to start a drift.
