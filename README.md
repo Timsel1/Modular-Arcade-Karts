@@ -155,14 +155,14 @@ Determines if the kart model rotates during a drift.
 |![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8db4de10-10be-445a-bbe2-dbbdb28c3082)|![TurnModelFalse](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/18298c32-1cdf-4c89-ac80-ea6d526fd688)|
 
 #### Turn Speed
-The speed at which the kart model rotates during a drift (purly visual).
+The speed at which the kart model rotates during a drift (purely visual).
 
 |8 Turn Speed|1000 Turn Speed|
 |:---------:|:---------:|
 |![Outward50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8db4de10-10be-445a-bbe2-dbbdb28c3082)|![Turn1000](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/1f6d2455-aee2-4bd4-8d8f-66780d33ee4b)|
 
 #### Visual Drift Angle
-The visual angle of the kart model during a drift (purly visual).
+The visual angle of the kart model during a drift (purely visual).
 
 |40 Visual Drift Angle|80 Visual Drift Angle|
 |:-------------------:|:-------------------:|
