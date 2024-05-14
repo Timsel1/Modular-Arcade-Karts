@@ -1,5 +1,8 @@
+using Meijvogel.ModularArcadeKarts.Base;
+
 namespace Meijvogel.ModularArcadeKarts.Karts
 {
+
     public class BasicKart : BaseKart
     {
         private void Start()
@@ -17,8 +20,8 @@ namespace Meijvogel.ModularArcadeKarts.Karts
             _outwardsDriftForce = kartStats._outwardsDriftForce;
             _driftSpeedThreshold = kartStats._driftSpeedThreshold;
             _driftPower = kartStats._driftPower;
-            _inwardDriftAngle = kartStats._inwardDriftAngle;
-            _outwardDriftAngle = kartStats._outwardDriftAngle;
+            _inwardDriftFactor = kartStats._inwardDriftFactor;
+            _outwardDriftFactor = kartStats._outwardDriftFactor;
             _turnModel = kartStats.turnModel;
             _turnSpeed = kartStats._turnSpeed;
             _visualDriftAngle = kartStats.visualDriftAngle;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Meijvogel.ModularArcadeKarts
+namespace Meijvogel.ModularArcadeKarts.Base
 {
     [CreateAssetMenu(fileName = "NewKart", menuName = "Modular Arcade Karts/Kart Stats")]
     public class KartStats : ScriptableObject
@@ -47,7 +47,8 @@ namespace Meijvogel.ModularArcadeKarts
 
         [Header("Drift Settings")]
         [Tooltip("The force applied to the kart when drifting.")]
-        public float _outwardsDriftForce = 50000;
+        [Range(1, 100)]
+        public float _outwardsDriftForce = 50;
 
         [Tooltip("The speed threshold required for the kart to start drifting.")]
         [Range(0.01f, 100)]
@@ -59,19 +60,19 @@ namespace Meijvogel.ModularArcadeKarts
 
         [Tooltip("A value used to calculate the sharpness of a drift when steering inward during a drift.")]
         [Range(0.01f, 10)]
-        public float _inwardDriftAngle = 1.5f;
+        public float _inwardDriftFactor = 1.5f;
 
-        [Tooltip("A value used to calculate the sharpness of a drift when steering  outward during a drift.")]
+        [Tooltip("A value used to calculate the sharpness of a drift when steering outward during a drift.")]
         [Range(0.01f, 10)]
-        public float _outwardDriftAngle = 0.2f;
+        public float _outwardDriftFactor = 0.2f;
 
         [Tooltip("Determines if the kart model rotates during a drift.")]
         public bool turnModel = true;
 
-        [Tooltip("The speed at which the kart model rotates during a drift (purly visual).")]
+        [Tooltip("The speed at which the kart model rotates during a drift (purely visual).")]
         public float _turnSpeed = 8;
 
-        [Tooltip("The visual angle of the kart model during a drift (purly visual).")]
+        [Tooltip("The visual angle of the kart model during a drift (purely visual).")]
         [Range(0.01f, 360)]
         public float visualDriftAngle = 20;
 

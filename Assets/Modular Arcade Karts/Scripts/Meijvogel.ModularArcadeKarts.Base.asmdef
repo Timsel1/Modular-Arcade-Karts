@@ -1,6 +1,6 @@
 {
-    "name": "Meijvogel.ModularArcadeKarts",
-    "rootNamespace": "Meijvogel.ModularArcadeKarts",
+    "name": "Meijvogel.ModularArcadeKarts.Base",
+    "rootNamespace": "Meijvogel.ModularArcadeKarts.Base",
     "references": [
         "GUID:2ce17c625175dde488cc42fe33ca7a8d",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",

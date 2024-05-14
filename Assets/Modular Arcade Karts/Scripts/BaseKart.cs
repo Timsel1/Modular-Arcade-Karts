@@ -6,12 +6,12 @@ using static UnityEngine.InputSystem.InputAction;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
-namespace Meijvogel.ModularArcadeKarts
+namespace Meijvogel.ModularArcadeKarts.Base
 {
     public abstract class BaseKart : MonoBehaviour
-    {
-        //References
+    { //References
         [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected GameObject _kartModel;
         [SerializeField] protected KartStats kartStats;
@@ -53,8 +53,8 @@ namespace Meijvogel.ModularArcadeKarts
         protected float _outwardsDriftForce;
         protected float _driftSpeedThreshold;
         protected float _driftPower;
-        protected float _inwardDriftAngle;
-        protected float _outwardDriftAngle;
+        protected float _inwardDriftFactor;
+        protected float _outwardDriftFactor;
         protected bool _turnModel;
         protected float _turnSpeed;
         protected float _visualDriftAngle;
@@ -122,8 +122,7 @@ namespace Meijvogel.ModularArcadeKarts
 
         private void Update()
         {
-            if (_isAccelerating || _isReversing || _isDecelerating || _isBoosting)
-                AddVelocity();
+            AddVelocity();
 
             if (_isBoosting)
                 _currentSpeed = _boostSpeed;
@@ -285,7 +284,7 @@ namespace Meijvogel.ModularArcadeKarts
             Vector2 inputDirection = _steerInput.ReadValue<Vector2>();
             _horizontalInput = inputDirection.x;
 
-            if (!_isDrifting && _currentSpeed > 0)
+            if (!_isDrifting && _currentSpeed != 0)
             {
                 if (_currentSpeed > _steerSpeedThreshold)
                     _updateSteerFactor = true;
@@ -338,12 +337,12 @@ namespace Meijvogel.ModularArcadeKarts
             {
                 if (_driftingLeft && !_driftingRight)
                 {
-                    _horizontalInput = _horizontalInput < 0 ? -_inwardDriftAngle : -_outwardDriftAngle;
+                    _horizontalInput = _horizontalInput < 0 ? -_inwardDriftFactor : -_outwardDriftFactor;
                     ApplyDriftEffects(-_visualDriftAngle);
                 }
                 else if (_driftingRight && !_driftingLeft)
                 {
-                    _horizontalInput = _horizontalInput > 0 ? _inwardDriftAngle : _outwardDriftAngle;
+                    _horizontalInput = _horizontalInput > 0 ? _inwardDriftFactor : _outwardDriftFactor;
                     ApplyDriftEffects(_visualDriftAngle);
                 }
             }
@@ -351,12 +350,12 @@ namespace Meijvogel.ModularArcadeKarts
             {
                 if (_driftingLeft && !_driftingRight)
                 {
-                    _horizontalInput = -_inwardDriftAngle;
+                    _horizontalInput = -_inwardDriftFactor;
                     ApplyDriftEffects(-_visualDriftAngle);
                 }
                 else if (_driftingRight && !_driftingLeft)
                 {
-                    _horizontalInput = _inwardDriftAngle;
+                    _horizontalInput = _inwardDriftFactor;
                     ApplyDriftEffects(_visualDriftAngle);
                 }
             }
@@ -368,7 +367,10 @@ namespace Meijvogel.ModularArcadeKarts
         private void ApplyDriftEffects(float angle)
         {
             if (_isDrifting && _grounded)
-                _rb.AddForce(_outwardsDriftForce * Time.deltaTime * transform.right, ForceMode.Acceleration);
+                if (_driftingRight)
+                    _rb.AddForce(_outwardsDriftForce * 1000 * Time.deltaTime * -transform.right, ForceMode.Acceleration);
+                else if (_driftingLeft)
+                    _rb.AddForce(_outwardsDriftForce * 1000 * Time.deltaTime * transform.right, ForceMode.Acceleration);
 
             if (_turnModel)
                 _kartModel.transform.localRotation = Quaternion.Lerp(_kartModel.transform.localRotation, Quaternion.Euler(0, angle, 0), _turnSpeed * Time.deltaTime);
@@ -380,9 +382,8 @@ namespace Meijvogel.ModularArcadeKarts
             _driftingRight = false;
             _isDrifting = false;
 
-            //_kartModel.transform.localRotation = Quaternion.Lerp(_kartModel.transform.localRotation, Quaternion.Euler(0, 0, 0), _turnSpeed * Time.deltaTime);
-
-            _kartModel.transform.rotation = new Quaternion(0, 0, 0, 0);
+            if (_turnModel)
+                _kartModel.transform.rotation = new Quaternion(0, 0, 0, 0);
 
             if (_isBoosting)
             {
