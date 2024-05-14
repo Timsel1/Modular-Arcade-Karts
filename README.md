@@ -51,7 +51,7 @@ It is recommended to have this structure for your kart:
   - Empty object containing your kart script of choice, a rigid body and optionally the collider.
     - Kart model, collider is recommended to have the collider on the model.
 
-|![KartSetup](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/001ccf02-80d0-44b4-8abf-07dc54b7519d)|![KartSetup1](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/8d66561f-fcd7-47bf-9469-2215ff6edc4f)|
+|![KartSetup](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/01a2781d-ae77-4205-b40a-616bf5dc35cf)|![KartSetup1](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/cdd6da59-acb1-49d2-a8ad-42e9b75b37ff)|
 |:-:|:-:|
 
 
