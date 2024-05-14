@@ -86,8 +86,9 @@ namespace Meijvogel.ModularArcadeKarts
         public float _gravity = 50;
 
         [Header("Raycast Settings")]
+        public LayerMask _layerMask;
+
         [Tooltip("Sets the length of the raycast used to check if the kart is grounded, increase size until grounded is true.")]
         public float _raycastDistance = 1f;
-        public LayerMask _layerMask;
     }
 }
