@@ -78,6 +78,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]cenes
 /[Aa]ssets/[Ss]cenes.meta
 
-/[Aa]ssets/[Rr]escources
-/[Aa]ssets/[Rr]escources.meta
+/[Aa]ssets/[Rr]esources
+/[Aa]ssets/[Rr]esources.meta
+
+/[Pp]rojectSettings/*
+/[Pp]ackages/*
 
