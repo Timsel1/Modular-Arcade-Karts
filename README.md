@@ -7,6 +7,10 @@ Provides a quick way to set up arcade style karts, based on stats that can be al
 
 ## Prerequisites
 This Project makes use of the following packages:
+- [Unity New Input System](#unity-new-input-system)
+- [DOTween](#dotween)
+- [UniTask](#unitask)
+
 
 ### [Unity New Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.8/manual/Installation.html)  
 The steps for intergrating the new input system into your project can be followed by clicking the provided link. If you make use of unity's old input system (legacy input system), make sure to still install this package. After installing go into
@@ -19,16 +23,18 @@ Edit -> Project Settings -> Player -> Other Settings and scroll down to Configur
 ### [DOTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)  
 DOTween can be installed from the unity asset store, the provided link will lead directly to the free version of DOTween. After installing it make sure to set it up properly by Using the DOTween Utility Panel.  
 To do so follow these steps:
-  - If it's not already opened, open the Utility Panel like shown in the example.
+  - If it's not already opened, open the Utility Panel like shown in Instruction Example 2.
     
+|Instruction Example 2|
+|:-------------------:|
 |![InstructionDOTween](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/736c0e6e-be5a-45d9-a759-61a8de302ff5)|
-|:-:|
 
   - Click Setup DOTween
-  - the default setting can be applied
+  - the default setting can be applied, like in Instruction Example 3.
     
+    |Instruction Example 3|  
+    |:-------------------:|
     |![InstructionDOTween2](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/b4acb045-1a64-430b-b1b8-e00b481c7210)|
-    |:-:|
     
   - Click create assembly definition
   - All Done
