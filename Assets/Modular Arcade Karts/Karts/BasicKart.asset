@@ -22,14 +22,14 @@ MonoBehaviour:
   _sharpSteerPower: 100
   _wideSteerPower: 70
   _steerPower: 70
-  _outwardsDriftForce: 50000
+  _outwardsDriftForce: 50
   _driftSpeedThreshold: 30
   _driftPower: 70
-  _inwardDriftAngle: 1.5
-  _outwardDriftAngle: 0.2
-  turnModel: 1
+  _inwardDriftFactor: 1.5
+  _outwardDriftFactor: 0.2
+  _turnModel: 1
   _turnSpeed: 8
-  visualDriftAngle: 40
+  _visualDriftAngle: 20
   _driftTimeThresholds:
   - 1.5
   - 4
@@ -39,7 +39,7 @@ MonoBehaviour:
   - 1.5
   - 2.5
   _gravity: 40
-  _raycastDistance: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  _raycastDistance: 1

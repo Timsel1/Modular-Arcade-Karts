@@ -120,9 +120,9 @@ namespace Meijvogel.ModularArcadeKarts.Base
             _driftPower = kartStats._driftPower;
             _inwardDriftFactor = kartStats._inwardDriftFactor;
             _outwardDriftFactor = kartStats._outwardDriftFactor;
-            _turnModel = kartStats.turnModel;
+            _turnModel = kartStats._turnModel;
             _turnSpeed = kartStats._turnSpeed;
-            _visualDriftAngle = kartStats.visualDriftAngle;
+            _visualDriftAngle = kartStats._visualDriftAngle;
             _driftTimeThresholds = kartStats._driftTimeThresholds;
             _boostPhaseDurations = kartStats._boostPhaseDurations;
             _raycastDistance = kartStats._raycastDistance;

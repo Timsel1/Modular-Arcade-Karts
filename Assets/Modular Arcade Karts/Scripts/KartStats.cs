@@ -5,7 +5,6 @@ namespace Meijvogel.ModularArcadeKarts.Base
     [CreateAssetMenu(fileName = "NewKart", menuName = "Modular Arcade Karts/Kart Stats")]
     public class KartStats : ScriptableObject
     {
-        [Header("Speed Settings")]
         [Tooltip("The maximum forward speed of the kart.")]
         [Range(1, 200)]
         public float _maxSpeed = 60;
@@ -26,7 +25,6 @@ namespace Meijvogel.ModularArcadeKarts.Base
         [Range(0.01f, 10)]
         public float _decelerationTime = 3;
 
-        [Header("Steering Settings")]
         [Tooltip("Determines if steering sharpness is affected by the kart's speed.")]
         public bool _speedBasedSteering = true;
 
@@ -45,7 +43,6 @@ namespace Meijvogel.ModularArcadeKarts.Base
         [Range(0.01f, 200)]
         public float _steerPower = 70;
 
-        [Header("Drift Settings")]
         [Tooltip("The force applied to the kart when drifting.")]
         [Range(1, 100)]
         public float _outwardsDriftForce = 50;
@@ -67,14 +64,14 @@ namespace Meijvogel.ModularArcadeKarts.Base
         public float _outwardDriftFactor = 0.2f;
 
         [Tooltip("Determines if the kart model rotates during a drift.")]
-        public bool turnModel = true;
+        public bool _turnModel = true;
 
         [Tooltip("The speed at which the kart model rotates during a drift (purely visual).")]
         public float _turnSpeed = 8;
 
         [Tooltip("The visual angle of the kart model during a drift (purely visual).")]
         [Range(0.01f, 360)]
-        public float visualDriftAngle = 20;
+        public float _visualDriftAngle = 20;
 
         [Tooltip("The thresholds for triggering different phases of drift boosting.")]
         public float[] _driftTimeThresholds = { 1.5f, 4f, 7f };
@@ -82,11 +79,9 @@ namespace Meijvogel.ModularArcadeKarts.Base
         [Tooltip("The durations of boost phases triggered by drifting.")]
         public float[] _boostPhaseDurations = { 0.75f, 1.5f, 2.5f };
 
-        [Header("Gravity Settings")]
         [Tooltip("The speed the kart will fall down with when it is not grounded.")]
         public float _gravity = 50;
 
-        [Header("Raycast Settings")]
         public LayerMask _layerMask;
 
         [Tooltip("Sets the length of the raycast used to check if the kart is grounded, increase size until grounded is true.")]

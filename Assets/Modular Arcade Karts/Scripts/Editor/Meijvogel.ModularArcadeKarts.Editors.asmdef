@@ -1,0 +1,16 @@
+{
+    "name": "Meijvogel.ModularArcadeKarts.Editors",
+    "rootNamespace": "Meijvogel.ModularArcadeKarts.Editors",
+    "references": [
+        "GUID:5c01b743c8591074da648648f67b3727"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
