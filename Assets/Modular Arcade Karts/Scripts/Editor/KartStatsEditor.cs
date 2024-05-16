@@ -1,10 +1,10 @@
 using Meijvogel.ModularArcadeKarts.Base;
 using UnityEditor;
 
-namespace Meijvogel.ModularArcadeKarts.Editors
+namespace Meijvogel.ModularArcadeKarts.Editor
 {
     [CustomEditor(typeof(KartStats))]
-    public class KartStatsEditor : Editor
+    public class KartStatsEditor : UnityEditor.Editor
     {
         SerializedProperty _speedBasedSteering;
         SerializedProperty _turnModel;
