@@ -179,7 +179,7 @@ The speed the kart will fall down with when it is not grounded.
 
 |10 Gravity|50 Gravity|
 |:--------:|:--------:|
-|![Gravity10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/a0fe3d44-9ee0-471d-859c-c580388ea387)|![Gravity50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/9d4862ec-2436-45af-af63-98d0500366aa)|
+|![Gravity10](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/7dd253af-9b5a-488a-b3a2-0db260335181)|![Gravity50](https://github.com/Timsel1/Modular-Arcade-Karts/assets/90602424/9d4862ec-2436-45af-af63-98d0500366aa)|
 
 #### Layer Mask
 The layer masks the raycast will check to see if the kart is grounded.
@@ -187,7 +187,14 @@ The layer masks the raycast will check to see if the kart is grounded.
 #### Raycast Distance
 Sets the length of the raycast used to check if the kart is grounded, increase size until grounded is true.
       
+### Custom Kart Logic
+To create custom kart logic the "BasicKart" script can be used as a starting point, any logic can be added to this script to create custom logic for your own kart. So to create a new completely custom kart these are the steps you would need to follow:  
+- Create a c# script
+- Make sure to inherit from BaseKart
+- When you need to use Awake(), Start(), OnDestroy() or Update(), make sure to start the method with "base.MethodName();"
+- Add your own code
 
+Standard kart stats can still be edited with the scriptable objects you make. 
 
 
 
