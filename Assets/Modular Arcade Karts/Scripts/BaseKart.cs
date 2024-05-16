@@ -11,7 +11,8 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 namespace Meijvogel.ModularArcadeKarts.Base
 {
     public abstract class BaseKart : MonoBehaviour
-    { //References
+    {
+        //References
         [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected GameObject _kartModel;
         [SerializeField] protected KartStats kartStats;
@@ -79,7 +80,7 @@ namespace Meijvogel.ModularArcadeKarts.Base
         private float CalculateCorrectedDecelTime(float maxSpeed) => _currentSpeed / maxSpeed * _decelerationTime;
         private float CalculateCorrectedAccelTime(float maxSpeed) => _accelerationTime - (_currentSpeed / maxSpeed * _accelerationTime);
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _kartInputActions = new();
             _cancellationTokenSource = new();
@@ -102,7 +103,38 @@ namespace Meijvogel.ModularArcadeKarts.Base
             _driftInput.canceled += OnEndDrift;
         }
 
-        private void OnDestroy()
+        protected virtual void Start()
+        {
+            _layerMask = kartStats._layerMask;
+            _maxSpeed = kartStats._maxSpeed;
+            _backwardMaxSpeed = kartStats._backwardMaxSpeed;
+            _boostSpeed = kartStats._boostSpeed;
+            _accelerationTime = kartStats._accelerationTime;
+            _decelerationTime = kartStats._decelerationTime;
+            _speedBasedSteering = kartStats._speedBasedSteering;
+            _steerSpeedThreshold = kartStats._steerSpeedThreshold;
+            _sharpSteerPower = kartStats._sharpSteerPower;
+            _wideSteerPower = kartStats._wideSteerPower;
+            _outwardsDriftForce = kartStats._outwardsDriftForce;
+            _driftSpeedThreshold = kartStats._driftSpeedThreshold;
+            _driftPower = kartStats._driftPower;
+            _inwardDriftFactor = kartStats._inwardDriftFactor;
+            _outwardDriftFactor = kartStats._outwardDriftFactor;
+            _turnModel = kartStats.turnModel;
+            _turnSpeed = kartStats._turnSpeed;
+            _visualDriftAngle = kartStats.visualDriftAngle;
+            _driftTimeThresholds = kartStats._driftTimeThresholds;
+            _boostPhaseDurations = kartStats._boostPhaseDurations;
+            _raycastDistance = kartStats._raycastDistance;
+            _gravity = kartStats._gravity;
+
+            if (!_speedBasedSteering)
+                _steerPower = kartStats._steerPower;
+            else
+                _steerPower = kartStats._sharpSteerPower;
+        }
+
+        protected virtual void OnDestroy()
         {
             _cancellationTokenSource.Cancel();
             _cancellationTokenSource.Dispose();
@@ -120,8 +152,11 @@ namespace Meijvogel.ModularArcadeKarts.Base
             _driftInput.canceled -= OnEndDrift;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
+            _grounded = Physics.Raycast(transform.position, -transform.up, out _, _raycastDistance, _layerMask);
+            Debug.DrawRay(transform.position, -transform.up, Color.green, _raycastDistance);
+
             AddVelocity();
 
             if (_isBoosting)
@@ -150,9 +185,6 @@ namespace Meijvogel.ModularArcadeKarts.Base
                     UpdateSteerAmount(_sharpSteerPower, duration);
                 }
             }
-
-            _grounded = Physics.Raycast(transform.position, -transform.up, out _, _raycastDistance, _layerMask);
-            Debug.DrawRay(transform.position, -transform.up, Color.green, _raycastDistance);
         }
 
         #region Accelerate Forward Backward
@@ -272,7 +304,7 @@ namespace Meijvogel.ModularArcadeKarts.Base
             if (_grounded)
                 vel.y = 0;
             else
-                vel.y = -1 * 50f;
+                vel.y = -1 * _gravity;
             _rb.velocity = vel;
         }
 
