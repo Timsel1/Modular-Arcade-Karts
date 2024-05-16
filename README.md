@@ -1,5 +1,5 @@
 # Modular Arcade Karts
-Provides a quick way to set up arcade style karts, based on stats that can be altered with scriptable objects.
+This project implements a modular kart customization system designed to help game developers in creating diverse arcade karts effortlessly. The system is built around scriptable objects, enabling easy adjustment of stats and behaviors. Developers can customize various aspects of the karts, such as speed, steering, drift, gravity, and more, through intuitive scriptable objects. By utilizing this system, developers can quickly iterate on kart designs, experiment with different configurations, and fine-tune gameplay mechanics to suit their project's needs. 
 
 ## Table of Contents
 - [Prerequisites](#prerequisite)
