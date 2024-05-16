@@ -46,7 +46,11 @@ To do so follow these steps:
 The steps for intergrating Unitask into your project can be followed by clicking the provided header link.
 
 ## How To Use
-### Kart Setup:  
+- [Kart Setup](#kart-setup)
+- [Kart Statistics](#kart-statistics)
+- [Custom Kart Logic](#custom-kart-logic)
+
+### Kart Setup  
 It is recommended to have this structure for your kart:
   - Empty object containing your kart script of choice, a rigid body and optionally the collider.
     - Kart model, collider is recommended to have the collider on the model.
